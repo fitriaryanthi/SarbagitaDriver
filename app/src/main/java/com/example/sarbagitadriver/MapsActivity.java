@@ -84,6 +84,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                         //firebase
                         DatabaseReference myRef = database.getReference(Username);
                         myRef.child("Koordinat").setValue(dKoordinat);
+                        
 
                     }
                 }
