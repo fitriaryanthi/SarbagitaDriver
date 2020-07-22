@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1094160690472",
+    "firebase_url": "https://sarbagitadriver.firebaseio.com",
+    "project_id": "sarbagitadriver",
+    "storage_bucket": "sarbagitadriver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094160690472:android:5f43a8f13e58a7f112341d",
+        "android_client_info": {
+          "package_name": "com.example.sarbagitadriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094160690472-oa4fnamualpc30s8epb7gr0pgfbankj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sarbagitadriver",
+            "certificate_hash": "25f3228801823c7299f58fd0b5a39b26a1052850"
+          }
+        },
+        {
+          "client_id": "1094160690472-http034pnjmt1v9u3jg8obku6tep48hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxHJAb5DzOioXRZ0E7coFDWDeMQp7ktGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094160690472-http034pnjmt1v9u3jg8obku6tep48hq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

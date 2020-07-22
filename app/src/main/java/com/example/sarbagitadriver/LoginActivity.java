@@ -18,11 +18,11 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LoginActivity extends AppCompatActivity {
 
     //Declaration EditTexts
-    EditText editTextEmail;
+    EditText editTextUserName;
     EditText editTextPassword;
 
     //Declaration TextInputLayout
-    TextInputLayout textInputLayoutEmail;
+    TextInputLayout textInputLayoutUserName;
     TextInputLayout textInputLayoutPassword;
 
     //Declaration Button
@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Declaration SqliteHelper
     SqliteHelper sqliteHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +49,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (validate()) {
 
                     //Get values from EditText fields
-                    String Email = editTextEmail.getText().toString();
+                    String Username = editTextUserName.getText().toString();
                     String Password = editTextPassword.getText().toString();
 
                     //Authenticate user
-                    User currentUser = sqliteHelper.Authenticate(new User(null, null, Email, Password));
+                    User currentUser = sqliteHelper.Authenticate(new User(null, Username, null, Password));
 
                     //Check Authentication is successful or not
                     if (currentUser != null) {
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         //User Logged in Successfully Launch You home screen activity
                         Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                        intent.putExtra("username",Username);
                         startActivity(intent);
                         finish();
 
@@ -92,9 +94,9 @@ public class LoginActivity extends AppCompatActivity {
 
     //this method is used to connect XML views to its Objects
     private void initViews() {
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextUserName = (EditText) findViewById(R.id.editTextUserName);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutUserName = (TextInputLayout) findViewById(R.id.textInputLayoutUserName);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
 
@@ -117,17 +119,9 @@ public class LoginActivity extends AppCompatActivity {
         boolean valid = false;
 
         //Get values from EditText fields
-        String Email = editTextEmail.getText().toString();
+        String Username = editTextUserName.getText().toString();
         String Password = editTextPassword.getText().toString();
 
-        //Handling validation for Email field
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
-            valid = false;
-            textInputLayoutEmail.setError("Please enter valid email!");
-        } else {
-            valid = true;
-            textInputLayoutEmail.setError(null);
-        }
 
         //Handling validation for Password field
         if (Password.isEmpty()) {
